@@ -93,6 +93,8 @@ namespace AstronomicalProcessing
                 int mid = (min + max) / 2;
                 if (dataArray[mid] == target)
                 {
+                    
+                    listBox1.SetSelected(mid, true);
                     MessageBox.Show("Number found");
                     return;
                 }
