@@ -30,8 +30,6 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnRandomAdd = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBinarySearch = new System.Windows.Forms.Button();
             this.btnBubbleSort = new System.Windows.Forms.Button();
@@ -45,65 +43,49 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(246, 364);
             this.listBox1.TabIndex = 0;
+            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(286, 76);
+            this.textBox1.Location = new System.Drawing.Point(286, 63);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(217, 33);
             this.textBox1.TabIndex = 1;
             // 
-            // btnRandomAdd
-            // 
-            this.btnRandomAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRandomAdd.Location = new System.Drawing.Point(317, 12);
-            this.btnRandomAdd.Name = "btnRandomAdd";
-            this.btnRandomAdd.Size = new System.Drawing.Size(146, 42);
-            this.btnRandomAdd.TabIndex = 2;
-            this.btnRandomAdd.Text = "Random Add";
-            this.btnRandomAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(286, 130);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(92, 42);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.Location = new System.Drawing.Point(411, 130);
+            this.btnEdit.Location = new System.Drawing.Point(286, 125);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(92, 42);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.TabStop = false;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnBinarySearch
             // 
             this.btnBinarySearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBinarySearch.Location = new System.Drawing.Point(340, 194);
+            this.btnBinarySearch.Location = new System.Drawing.Point(286, 195);
             this.btnBinarySearch.Name = "btnBinarySearch";
             this.btnBinarySearch.Size = new System.Drawing.Size(107, 42);
             this.btnBinarySearch.TabIndex = 5;
             this.btnBinarySearch.Text = "Search";
             this.btnBinarySearch.UseVisualStyleBackColor = true;
+            this.btnBinarySearch.Click += new System.EventHandler(this.btnBinarySearch_Click);
             // 
             // btnBubbleSort
             // 
             this.btnBubbleSort.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBubbleSort.Location = new System.Drawing.Point(340, 255);
+            this.btnBubbleSort.Location = new System.Drawing.Point(286, 268);
             this.btnBubbleSort.Name = "btnBubbleSort";
             this.btnBubbleSort.Size = new System.Drawing.Size(107, 42);
             this.btnBubbleSort.TabIndex = 6;
             this.btnBubbleSort.Text = "Sort";
             this.btnBubbleSort.UseVisualStyleBackColor = true;
+            this.btnBubbleSort.Click += new System.EventHandler(this.btnBubbleSort_Click);
             // 
             // Form1
             // 
@@ -113,8 +95,6 @@
             this.Controls.Add(this.btnBubbleSort);
             this.Controls.Add(this.btnBinarySearch);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnRandomAdd);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
@@ -128,8 +108,6 @@
 
         private ListBox listBox1;
         private TextBox textBox1;
-        private Button btnRandomAdd;
-        private Button btnAdd;
         private Button btnEdit;
         private Button btnBinarySearch;
         private Button btnBubbleSort;
