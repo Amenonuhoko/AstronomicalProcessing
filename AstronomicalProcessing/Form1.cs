@@ -14,7 +14,7 @@ namespace AstronomicalProcessing
     {
         // Global Variables
         static int arraySize = 24;
-        static int [] dataArray = new int[arraySize];
+        static int[] dataArray = new int[arraySize];
         static int index = 0;
         static bool sorted = false;
 
@@ -30,13 +30,13 @@ namespace AstronomicalProcessing
         // Fill array with random numbers
         public void FillArray()
         {
-            
+
             //
             Random random = new Random();
 
             for (int i = 0; i < arraySize; i++)
             {
-                dataArray[i] = random.Next(10, 99 );
+                dataArray[i] = random.Next(10, 99);
 
             }
             FillListBox();
@@ -47,11 +47,13 @@ namespace AstronomicalProcessing
             listBox1.Items.Clear();
             for (int i = 0; i < dataArray.Length; i++)
             {
-                
+
                 listBox1.Items.Add(dataArray[i]);
             }
         }
         #endregion
+
+
         // Events
         #region EVENTS
         // Single click event
@@ -62,6 +64,8 @@ namespace AstronomicalProcessing
             index = listBox1.SelectedIndex;
         }
         #endregion
+
+
         // BUTTONS
         #region BUTTONS
         // Binary Search Button
@@ -85,28 +89,28 @@ namespace AstronomicalProcessing
 
             while (min <= max) // "<" to check the last one on the left. ~~~ index[0]
             {
-                
+
                 int mid = (min + max) / 2;
                 if (dataArray[mid] == target)
                 {
                     MessageBox.Show("Number found");
                     return;
                 }
-                else if (dataArray[mid] >= target )
+                else if (dataArray[mid] >= target)
                 {
                     max = mid - 1;
-                    
-                    
+
+
                 }
                 else
                 {
                     min = mid + 1;
-                    
-                    
+
+
                 }
             }
             MessageBox.Show("That number does not exist!");
-            
+
         }
 
         // Bubble Sort Button
@@ -136,12 +140,12 @@ namespace AstronomicalProcessing
         // Edit Button
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(textBox1.Text) && index != -1)
+            if (!string.IsNullOrEmpty(textBox1.Text) && index != -1)
             {
                 dataArray[index] = Int32.Parse(textBox1.Text);
                 FillListBox();
             }
-            
+
         }
         #endregion
     }
