@@ -84,7 +84,12 @@ namespace AstronomicalProcessing
                 MessageBox.Show("Please sort first!");
                 return;
             }
-            int target = Int32.Parse(textBox1.Text);
+            bool success = Int32.TryParse(textBox1.Text, out int target);
+            if (!success)
+            {
+                MessageBox.Show("Please input an integer");
+                return;
+            }
             int min = 0;
             int max = arraySize - 1;
 
@@ -118,7 +123,7 @@ namespace AstronomicalProcessing
             bool found = false;
             if (!(Int32.TryParse(textBox1.Text, out target)))
             {
-                MessageBox.Show("You must enter an integer");
+                MessageBox.Show("Please input an integer");
                 return;
             }
             for (int x = 0; x < arraySize; x++)
@@ -168,8 +173,17 @@ namespace AstronomicalProcessing
         {
             if (!string.IsNullOrEmpty(textBox1.Text) && index != -1)
             {
-                dataArray[index] = Int32.Parse(textBox1.Text);
-                FillListBox();
+                bool success = Int32.TryParse(textBox1.Text, out dataArray[index]);
+                if (success) {
+                    FillListBox();
+                } else
+                {
+                    MessageBox.Show("Please input an integer");
+                };
+                
+            } else
+            {
+                MessageBox.Show("Please input a number");
             }
 
         }
@@ -177,20 +191,27 @@ namespace AstronomicalProcessing
 
         // Math Buttons
         // Mid-Extreme
+        // Sum of the smallest value and the largest value in the given data set divided by 2
         private void btnMidExtreme_Click(object sender, EventArgs e)
         {
             if (sorted)
             {
+                // Add both the highest and lowest value then divide by two
                 int lowestValue = dataArray[0];
                 int highestValue = dataArray[dataArray.Length - 1];
-                int midValue = (lowestValue + highestValue) / 2;
+                double midValue = (lowestValue + highestValue) / 2;
 
                 textBoxDisplay.Clear();
+                
                 textBoxDisplay.Text = midValue.ToString();
-            }
+            } else
+            {
+                MessageBox.Show("Please sort first");
+            };
 
         }
         // Mode
+        // Prints a number that appears most frequently in a set of data
         private void btnMode_Click(object sender, EventArgs e)
         {
             int count = 0;
@@ -198,49 +219,58 @@ namespace AstronomicalProcessing
             int maxValue = 0;
             int item = 0;
 
+            // Loop through array
             for (int i = 0; i < dataArray.Length; i++)
             {
+                // Set item to find instances of
                 item = dataArray[i];
+                // reset count
                 maxCount = 0;
 
+                // Second loop
                 for (int j = 0; j < dataArray.Length; j++)
                 {
+                    // If matched then increase count
                     if (dataArray[j] == item)
                     {
                         maxCount++;
                     }
                 }
+                // Set new record if higher
                 if (maxCount > maxValue)
                 {
+                    // Record values
                     count = item;
                     maxValue = maxCount;
                 }
 
             }
+            // Display to textbox
             textBoxDisplay.Clear();
             textBoxDisplay.Text = count.ToString() + ":  " + maxValue + "times";
         }
         // Average
         private void btnAverage_Click(object sender, EventArgs e)
         {
-            int average = 0;
-
+            double average = 0;
+            // Loop through arrays
             for (int i = 0; i < dataArray.Length; i++)
             {
                 average += dataArray[i];
             }
-
+            // Calculate average then round to two decimal places
             average = average / dataArray.Length;
-
-            textBoxDisplay.Text = average.ToString();
+            average = Math.Round(average, 2);
+            textBoxDisplay.Text = String.Format("{0:0.00}", average);
         }
         // Range
         private void btnRange_Click(object sender, EventArgs e)
         {
-
+            // Check if sorted
             if(sorted)
             {
-                int range = dataArray[dataArray.Length - 1] - dataArray[0];
+                // Subtract first indexed item from last indexed item
+                double range = dataArray[dataArray.Length - 1] - dataArray[0];
 
                 textBoxDisplay.Text = range.ToString();
             }
