@@ -6,7 +6,9 @@
 
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
+using System.Security.Cryptography;
 
 namespace AstronomicalProcessing
 {
@@ -85,7 +87,6 @@ namespace AstronomicalProcessing
             int target = Int32.Parse(textBox1.Text);
             int min = 0;
             int max = arraySize - 1;
-            // New comment
 
             while (min <= max) // "<" to check the last one on the left. ~~~ index[0]
             {
@@ -101,20 +102,43 @@ namespace AstronomicalProcessing
                 else if (dataArray[mid] >= target)
                 {
                     max = mid - 1;
-
-
                 }
                 else
                 {
                     min = mid + 1;
-
-
                 }
             }
             MessageBox.Show("That number does not exist!");
 
         }
-
+        // Sequential Search
+        private void btnSequentialSearch_Click(object sender, EventArgs e)
+        {
+            int target;
+            bool found = false;
+            if (!(Int32.TryParse(textBox1.Text, out target)))
+            {
+                MessageBox.Show("You must enter an integer");
+                return;
+            }
+            for (int x = 0; x < arraySize; x++)
+            {
+                if (dataArray[x] == target)
+                {
+                    listBox1.SetSelected(x, true);
+                    MessageBox.Show(" Found at index " + (x + 1));
+                    textBox1.Clear();
+                    textBox1.Focus();
+                    return;
+                }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Not Found, try again.");
+                textBox1.Clear();
+                textBox1.Focus();
+            }
+        }
         // Bubble Sort Button
         private void btnBubbleSort_Click(object sender, EventArgs e)
         {
@@ -149,6 +173,86 @@ namespace AstronomicalProcessing
             }
 
         }
+
+
+        // Math Buttons
+        // Mid-Extreme
+        private void btnMidExtreme_Click(object sender, EventArgs e)
+        {
+            if (sorted)
+            {
+                int lowestValue = dataArray[0];
+                int highestValue = dataArray[dataArray.Length - 1];
+                int midValue = (lowestValue + highestValue) / 2;
+
+                textBoxDisplay.Clear();
+                textBoxDisplay.Text = midValue.ToString();
+            }
+
+        }
+        // Mode
+        private void btnMode_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            int maxCount = 0;
+            int maxValue = 0;
+            int item = 0;
+
+            for (int i = 0; i < dataArray.Length; i++)
+            {
+                item = dataArray[i];
+                maxCount = 0;
+
+                for (int j = 0; j < dataArray.Length; j++)
+                {
+                    if (dataArray[j] == item)
+                    {
+                        maxCount++;
+                    }
+                }
+                if (maxCount > maxValue)
+                {
+                    count = item;
+                    maxValue = maxCount;
+                }
+
+            }
+            textBoxDisplay.Clear();
+            textBoxDisplay.Text = count.ToString() + ":  " + maxValue + "times";
+        }
+        // Average
+        private void btnAverage_Click(object sender, EventArgs e)
+        {
+            int average = 0;
+
+            for (int i = 0; i < dataArray.Length; i++)
+            {
+                average += dataArray[i];
+            }
+
+            average = average / dataArray.Length;
+
+            textBoxDisplay.Text = average.ToString();
+        }
+        // Range
+        private void btnRange_Click(object sender, EventArgs e)
+        {
+
+            if(sorted)
+            {
+                int range = dataArray[dataArray.Length - 1] - dataArray[0];
+
+                textBoxDisplay.Text = range.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please Sort First");
+            }
+        }
+
+
         #endregion
+
+        
     }
 }

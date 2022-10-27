@@ -38,8 +38,9 @@
             this.textBoxDisplay = new System.Windows.Forms.TextBox();
             this.btnMode = new System.Windows.Forms.Button();
             this.btnRange = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSequentialSearch = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAverage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -69,6 +70,7 @@
             this.btnEdit.TabIndex = 4;
             this.btnEdit.TabStop = false;
             this.btnEdit.Text = "Edit";
+            this.toolTip1.SetToolTip(this.btnEdit, "Edits the entry to the value in the textbox");
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -80,6 +82,7 @@
             this.btnBinarySearch.Size = new System.Drawing.Size(214, 42);
             this.btnBinarySearch.TabIndex = 5;
             this.btnBinarySearch.Text = "Binary Search";
+            this.toolTip1.SetToolTip(this.btnBinarySearch, "Performs a binary search");
             this.btnBinarySearch.UseVisualStyleBackColor = true;
             this.btnBinarySearch.Click += new System.EventHandler(this.btnBinarySearch_Click);
             // 
@@ -91,19 +94,22 @@
             this.btnBubbleSort.Size = new System.Drawing.Size(107, 42);
             this.btnBubbleSort.TabIndex = 6;
             this.btnBubbleSort.Text = "Sort";
+            this.toolTip1.SetToolTip(this.btnBubbleSort, "Sorts the list");
             this.btnBubbleSort.UseVisualStyleBackColor = true;
             this.btnBubbleSort.Click += new System.EventHandler(this.btnBubbleSort_Click);
             // 
             // btnMidExtreme
             // 
             this.btnMidExtreme.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMidExtreme.Location = new System.Drawing.Point(394, 299);
+            this.btnMidExtreme.Location = new System.Drawing.Point(394, 295);
             this.btnMidExtreme.Name = "btnMidExtreme";
             this.btnMidExtreme.Size = new System.Drawing.Size(137, 42);
             this.btnMidExtreme.TabIndex = 8;
             this.btnMidExtreme.TabStop = false;
             this.btnMidExtreme.Text = "Mid-Extreme";
+            this.toolTip1.SetToolTip(this.btnMidExtreme, "Sum of the smallest value and the largest value divided by 2");
             this.btnMidExtreme.UseVisualStyleBackColor = true;
+            this.btnMidExtreme.Click += new System.EventHandler(this.btnMidExtreme_Click);
             // 
             // textBoxDisplay
             // 
@@ -117,42 +123,62 @@
             // btnMode
             // 
             this.btnMode.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMode.Location = new System.Drawing.Point(394, 356);
+            this.btnMode.Location = new System.Drawing.Point(394, 343);
             this.btnMode.Name = "btnMode";
             this.btnMode.Size = new System.Drawing.Size(137, 42);
             this.btnMode.TabIndex = 10;
             this.btnMode.TabStop = false;
             this.btnMode.Text = "Mode";
+            this.toolTip1.SetToolTip(this.btnMode, "Find the number that appears most frequentlyendif");
             this.btnMode.UseVisualStyleBackColor = true;
+            this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
             // 
             // btnRange
             // 
             this.btnRange.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRange.Location = new System.Drawing.Point(394, 404);
+            this.btnRange.Location = new System.Drawing.Point(394, 439);
             this.btnRange.Name = "btnRange";
             this.btnRange.Size = new System.Drawing.Size(137, 42);
             this.btnRange.TabIndex = 11;
             this.btnRange.TabStop = false;
             this.btnRange.Text = "Range";
+            this.toolTip1.SetToolTip(this.btnRange, "Find the difference between the largest and smallest values");
             this.btnRange.UseVisualStyleBackColor = true;
+            this.btnRange.Click += new System.EventHandler(this.btnRange_Click);
             // 
-            // button1
+            // btnSequentialSearch
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(356, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 42);
-            this.button1.TabIndex = 12;
-            this.button1.TabStop = false;
-            this.button1.Text = "Sequential Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSequentialSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSequentialSearch.Location = new System.Drawing.Point(356, 68);
+            this.btnSequentialSearch.Name = "btnSequentialSearch";
+            this.btnSequentialSearch.Size = new System.Drawing.Size(214, 42);
+            this.btnSequentialSearch.TabIndex = 12;
+            this.btnSequentialSearch.TabStop = false;
+            this.btnSequentialSearch.Text = "Sequential Search";
+            this.toolTip1.SetToolTip(this.btnSequentialSearch, "Performs a sequential search");
+            this.btnSequentialSearch.UseVisualStyleBackColor = true;
+            this.btnSequentialSearch.Click += new System.EventHandler(this.btnSequentialSearch_Click);
+            // 
+            // btnAverage
+            // 
+            this.btnAverage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAverage.Location = new System.Drawing.Point(394, 391);
+            this.btnAverage.Name = "btnAverage";
+            this.btnAverage.Size = new System.Drawing.Size(137, 42);
+            this.btnAverage.TabIndex = 13;
+            this.btnAverage.TabStop = false;
+            this.btnAverage.Text = "Average";
+            this.toolTip1.SetToolTip(this.btnAverage, "Find the average");
+            this.btnAverage.UseVisualStyleBackColor = true;
+            this.btnAverage.Click += new System.EventHandler(this.btnAverage_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 503);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAverage);
+            this.Controls.Add(this.btnSequentialSearch);
             this.Controls.Add(this.btnRange);
             this.Controls.Add(this.btnMode);
             this.Controls.Add(this.textBoxDisplay);
@@ -180,7 +206,8 @@
         private TextBox textBoxDisplay;
         private Button btnMode;
         private Button btnRange;
-        private Button button1;
+        private Button btnSequentialSearch;
         private ToolTip toolTip1;
+        private Button btnAverage;
     }
 }
