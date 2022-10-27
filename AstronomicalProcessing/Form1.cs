@@ -149,5 +149,18 @@ namespace AstronomicalProcessing
 
         }
         #endregion
+
+        private void btnMidExtreme_Click(object sender, EventArgs e)
+        {
+            if (sorted)
+            {
+                int lowestValue = dataArray[0];
+                int highestValue = dataArray[dataArray.Length - 1];
+                int midValue = (lowestValue + highestValue) / 2;
+
+                textBoxDisplay.Text = midValue.ToString();
+            }
+            
+        }
     }
 }

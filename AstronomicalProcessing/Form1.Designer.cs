@@ -110,6 +110,7 @@
             this.btnMidExtreme.Text = "Mid-Extreme";
             this.toolTip1.SetToolTip(this.btnMidExtreme, "Sum of the smallest value and the largest value divided by 2");
             this.btnMidExtreme.UseVisualStyleBackColor = true;
+            this.btnMidExtreme.Click += new System.EventHandler(this.btnMidExtreme_Click);
             // 
             // textBoxDisplay
             // 
