@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBinarySearch = new System.Windows.Forms.Button();
             this.btnBubbleSort = new System.Windows.Forms.Button();
+            this.btnMidExtreme = new System.Windows.Forms.Button();
+            this.textBoxDisplay = new System.Windows.Forms.TextBox();
+            this.btnMode = new System.Windows.Forms.Button();
+            this.btnRange = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // listBox1
@@ -41,22 +48,22 @@
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(246, 364);
+            this.listBox1.Size = new System.Drawing.Size(246, 484);
             this.listBox1.TabIndex = 0;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(286, 63);
+            this.textBox1.Location = new System.Drawing.Point(286, 135);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 33);
+            this.textBox1.Size = new System.Drawing.Size(347, 33);
             this.textBox1.TabIndex = 1;
             // 
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.Location = new System.Drawing.Point(286, 125);
+            this.btnEdit.Location = new System.Drawing.Point(286, 186);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(92, 42);
             this.btnEdit.TabIndex = 4;
@@ -68,18 +75,18 @@
             // btnBinarySearch
             // 
             this.btnBinarySearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBinarySearch.Location = new System.Drawing.Point(286, 195);
+            this.btnBinarySearch.Location = new System.Drawing.Point(356, 12);
             this.btnBinarySearch.Name = "btnBinarySearch";
-            this.btnBinarySearch.Size = new System.Drawing.Size(107, 42);
+            this.btnBinarySearch.Size = new System.Drawing.Size(214, 42);
             this.btnBinarySearch.TabIndex = 5;
-            this.btnBinarySearch.Text = "Search";
+            this.btnBinarySearch.Text = "Binary Search";
             this.btnBinarySearch.UseVisualStyleBackColor = true;
             this.btnBinarySearch.Click += new System.EventHandler(this.btnBinarySearch_Click);
             // 
             // btnBubbleSort
             // 
             this.btnBubbleSort.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBubbleSort.Location = new System.Drawing.Point(286, 268);
+            this.btnBubbleSort.Location = new System.Drawing.Point(526, 186);
             this.btnBubbleSort.Name = "btnBubbleSort";
             this.btnBubbleSort.Size = new System.Drawing.Size(107, 42);
             this.btnBubbleSort.TabIndex = 6;
@@ -87,11 +94,69 @@
             this.btnBubbleSort.UseVisualStyleBackColor = true;
             this.btnBubbleSort.Click += new System.EventHandler(this.btnBubbleSort_Click);
             // 
+            // btnMidExtreme
+            // 
+            this.btnMidExtreme.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMidExtreme.Location = new System.Drawing.Point(394, 299);
+            this.btnMidExtreme.Name = "btnMidExtreme";
+            this.btnMidExtreme.Size = new System.Drawing.Size(137, 42);
+            this.btnMidExtreme.TabIndex = 8;
+            this.btnMidExtreme.TabStop = false;
+            this.btnMidExtreme.Text = "Mid-Extreme";
+            this.btnMidExtreme.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDisplay
+            // 
+            this.textBoxDisplay.Enabled = false;
+            this.textBoxDisplay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDisplay.Location = new System.Drawing.Point(286, 243);
+            this.textBoxDisplay.Name = "textBoxDisplay";
+            this.textBoxDisplay.Size = new System.Drawing.Size(347, 33);
+            this.textBoxDisplay.TabIndex = 9;
+            // 
+            // btnMode
+            // 
+            this.btnMode.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMode.Location = new System.Drawing.Point(394, 356);
+            this.btnMode.Name = "btnMode";
+            this.btnMode.Size = new System.Drawing.Size(137, 42);
+            this.btnMode.TabIndex = 10;
+            this.btnMode.TabStop = false;
+            this.btnMode.Text = "Mode";
+            this.btnMode.UseVisualStyleBackColor = true;
+            // 
+            // btnRange
+            // 
+            this.btnRange.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRange.Location = new System.Drawing.Point(394, 404);
+            this.btnRange.Name = "btnRange";
+            this.btnRange.Size = new System.Drawing.Size(137, 42);
+            this.btnRange.TabIndex = 11;
+            this.btnRange.TabStop = false;
+            this.btnRange.Text = "Range";
+            this.btnRange.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(356, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 42);
+            this.button1.TabIndex = 12;
+            this.button1.TabStop = false;
+            this.button1.Text = "Sequential Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 426);
+            this.ClientSize = new System.Drawing.Size(663, 503);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRange);
+            this.Controls.Add(this.btnMode);
+            this.Controls.Add(this.textBoxDisplay);
+            this.Controls.Add(this.btnMidExtreme);
             this.Controls.Add(this.btnBubbleSort);
             this.Controls.Add(this.btnBinarySearch);
             this.Controls.Add(this.btnEdit);
@@ -111,5 +176,11 @@
         private Button btnEdit;
         private Button btnBinarySearch;
         private Button btnBubbleSort;
+        private Button btnMidExtreme;
+        private TextBox textBoxDisplay;
+        private Button btnMode;
+        private Button btnRange;
+        private Button button1;
+        private ToolTip toolTip1;
     }
 }
