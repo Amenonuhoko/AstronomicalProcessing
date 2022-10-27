@@ -85,7 +85,6 @@ namespace AstronomicalProcessing
             int target = Int32.Parse(textBox1.Text);
             int min = 0;
             int max = arraySize - 1;
-            // New comment
 
             while (min <= max) // "<" to check the last one on the left. ~~~ index[0]
             {

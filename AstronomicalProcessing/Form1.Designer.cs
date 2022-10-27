@@ -69,6 +69,7 @@
             this.btnEdit.TabIndex = 4;
             this.btnEdit.TabStop = false;
             this.btnEdit.Text = "Edit";
+            this.toolTip1.SetToolTip(this.btnEdit, "Edits the entry to the value in the textbox");
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -80,6 +81,7 @@
             this.btnBinarySearch.Size = new System.Drawing.Size(214, 42);
             this.btnBinarySearch.TabIndex = 5;
             this.btnBinarySearch.Text = "Binary Search";
+            this.toolTip1.SetToolTip(this.btnBinarySearch, "Performs a binary search");
             this.btnBinarySearch.UseVisualStyleBackColor = true;
             this.btnBinarySearch.Click += new System.EventHandler(this.btnBinarySearch_Click);
             // 
@@ -91,6 +93,7 @@
             this.btnBubbleSort.Size = new System.Drawing.Size(107, 42);
             this.btnBubbleSort.TabIndex = 6;
             this.btnBubbleSort.Text = "Sort";
+            this.toolTip1.SetToolTip(this.btnBubbleSort, "Sorts the list");
             this.btnBubbleSort.UseVisualStyleBackColor = true;
             this.btnBubbleSort.Click += new System.EventHandler(this.btnBubbleSort_Click);
             // 
@@ -103,6 +106,7 @@
             this.btnMidExtreme.TabIndex = 8;
             this.btnMidExtreme.TabStop = false;
             this.btnMidExtreme.Text = "Mid-Extreme";
+            this.toolTip1.SetToolTip(this.btnMidExtreme, "Sum of the");
             this.btnMidExtreme.UseVisualStyleBackColor = true;
             // 
             // textBoxDisplay
@@ -145,6 +149,7 @@
             this.button1.TabIndex = 12;
             this.button1.TabStop = false;
             this.button1.Text = "Sequential Search";
+            this.toolTip1.SetToolTip(this.button1, "Performs a sequential search");
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
