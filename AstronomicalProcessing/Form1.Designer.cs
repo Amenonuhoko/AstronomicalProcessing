@@ -41,7 +41,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnAverage = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.SuspendLayout();
             // 
             // listBox1
@@ -169,20 +168,11 @@
             this.toolTip1.SetToolTip(this.btnAverage, "Find the average");
             this.btnAverage.UseVisualStyleBackColor = true;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(663, 25);
-            this.toolStrip1.TabIndex = 14;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 503);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnAverage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRange);
@@ -215,6 +205,5 @@
         private Button button1;
         private ToolTip toolTip1;
         private Button btnAverage;
-        private ToolStrip toolStrip1;
     }
 }
