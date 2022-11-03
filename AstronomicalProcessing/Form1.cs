@@ -38,7 +38,7 @@ namespace AstronomicalProcessing
 
             for (int i = 0; i < arraySize; i++)
             {
-                dataArray[i] = random.Next(10, 99);
+                dataArray[i] = random.Next(0, 99);
 
             }
             FillListBox();
@@ -279,8 +279,6 @@ namespace AstronomicalProcessing
                 MessageBox.Show("Please Sort First");
             }
         }
-
-
         #endregion
 
         
