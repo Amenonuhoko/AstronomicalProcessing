@@ -279,8 +279,6 @@ namespace AstronomicalProcessing
                 MessageBox.Show("Please Sort First");
             }
         }
-
-
         #endregion
 
         
